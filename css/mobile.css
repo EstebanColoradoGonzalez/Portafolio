@@ -1,0 +1,148 @@
+:root
+{
+    --font-roboto: 'Roboto', sans-serif;
+    --light: 300;
+    --regular: 400;
+    --medium: 500;
+    --bold: 700;
+    --black: 900;
+    --normal: 1.4rem;
+    --tall: 1.6rem;
+    --big: 1.8rem;
+    --extensive: 2rem;
+    --primary-color: #f7931a;
+    --soft-orange: #ffe9d5;
+    --secondary-color: #1a9af7;
+    --soft-blue: #e7f5ff;
+    --warm-black: #282623;
+    --dark-black: #201e1c;
+    --grey: #bababa;
+    --off-white: #faf8f7;
+    --just-white: #fff;
+}
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html
+{
+    font-size: 62.5%;
+    font-family: var(--font-roboto);
+    font-weight: var(--regular);
+}
+
+body
+{
+    height: 100vh;
+    width: 100%;
+}
+
+.nav
+{
+    border-bottom: 1px solid var(--grey);
+}
+
+.nav__checkbox 
+{
+    display: none;
+}
+
+.nav__toggle 
+{
+    position: absolute;
+    cursor: pointer;
+    margin: 0 1rem;
+    right: 0;
+}
+
+.nav__toggle svg 
+{
+    width: 1.7rem;
+    fill: var(--white);
+}
+
+.nav__toggle .close 
+{
+    display: none;
+}
+
+.nav__toggle .close, .nav__toggle .menu 
+{
+  margin-top: 0.3rem;
+}
+
+.nav__menu 
+{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 1rem;
+}
+
+.nav__menu li 
+{
+    display: none;
+    list-style-type: none;
+}
+
+.nav__menu li:first-child 
+{
+    display: block;
+    margin-right: auto;
+}
+
+.nav__menu a 
+{
+    color: var(--dark-black);
+    font-size: var(--normal);
+    text-decoration: none;
+}
+
+.menu__name a
+{
+    height: auto;
+    font-size: var(--extensive);
+}
+
+#nav__checkbox:checked ~ ul.nav__menu li
+{
+    display: block;
+}
+
+#nav__checkbox:checked ~ .nav__toggle .close 
+{
+    display: block;
+}
+
+#nav__checkbox:checked ~ ul.nav__menu li 
+{
+    display: block;
+}
+
+#nav__checkbox:checked ~ label.nav__toggle .menu 
+{
+    display: none;
+}
+
+@media only screen and (min-width: 560px) 
+{
+    .nav__toggle 
+    {
+      display: none;
+    }
+  
+    .nav__menu
+    {
+      flex-direction: row;
+    }
+  
+    .nav__menu li 
+    {
+      display: block;
+    }
+}
